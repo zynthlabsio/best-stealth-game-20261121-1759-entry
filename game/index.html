@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberveil — Mira the moth-thief</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e1a; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  #hud { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 14px; align-items: center;
+         background: rgba(13,16,30,0.82); color: #eef1ff; border: 1px solid rgba(255,179,71,0.45); border-radius: 12px;
+         padding: 7px 16px; font-size: 14px; pointer-events: none; white-space: nowrap; }
+  #hud b { color: #ffb347; }
+  #mute { pointer-events: auto; background: #465082; color: #eef1ff; border: 0; border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 13px; }
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<canvas id="game" aria-label="Emberveil: top-down stealth. Move with WASD or arrows, sneak with Shift, take crystals with Space or E."></canvas>
+<div id="hud">
+  <span id="hud-level">Wing 1</span>
+  <span>Crystals <b id="hud-crystals">0/3</b></span>
+  <span>Eye <b id="hud-eye">calm</b></span>
+  <span>Time <b id="hud-time">00:00</b></span>
+  <span>Attempts <b id="hud-lives">3</b></span>
+  <button id="mute" type="button">Sound: on</button>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
